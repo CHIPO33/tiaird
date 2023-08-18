@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="background-color: rgba(241, 235, 242, 0.7);">
+    <div class="card-body">
+      <h2 class="card-title"><i class="fas fa-user"></i> Usuarios</h2>
+      
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            {% set icon, color = get_flash_message_style(category) %}
+            <div class="alert alert-{{ color }}">
+              <i class="{{ icon }}"></i> {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% endwith %}
+      
+      <a href="/user/add" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Agregar Usuario</a>
+      
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="table-data">
+            {% for usuario in usuarios %}
+            <tr>
+              <td>{{ usuario.0 }}</td>
+              <td>{{ usuario.1 }}</td>
+              <td>{{ usuario.2 }}</td>
+              <td>{{ usuario.4 }}</td>
+              <td>
+                
+                <a href="/user/delete/{{ usuario.0 }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este Usuario?')"><i class="fas fa-trash"></i> Eliminar</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+      <a href="/user" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Retroceder</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

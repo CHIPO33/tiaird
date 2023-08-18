@@ -1,0 +1,50 @@
+/* Estilos generales */
+body {
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(68, 71, 68, 0.952), rgba(128, 124, 118, 0.048));
+}
+
+/* Estilo para los botones de acción */
+.btn-primary {
+  background-color: #000000;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Estilo para los botones de acción secundarios */
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+  border-color: #545b62;
+}
+
+/* Estilo para los botones de éxito (éxito en acciones) */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #1e7e34;
+  border-color: #1e7e34;
+}
+
+/* Estilo para los botones de peligro (eliminación de datos, etc.) */
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130;
+  border-color: #bd2130;
+}
+

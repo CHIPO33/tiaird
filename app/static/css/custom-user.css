@@ -1,0 +1,42 @@
+
+
+.btn-primary {
+    background-color: #95f100;
+    border-color: #fd840d;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff9933;
+    border-color: #ff9933;
+  }
+  
+  /* Fondo con color vistoso */
+  body {
+    background: linear-gradient(to bottom, rgba(68, 71, 68, 0.952), rgba(128, 124, 118, 0.048));
+  }
+  
+  /* Cambiar el color del texto en los enlaces del menú de navegación */
+  .navbar-nav .nav-link {
+    color: #fff;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ffcc00;
+  }
+  
+  /* Cambiar el color del ícono en los enlaces del menú de navegación */
+  .navbar-nav .nav-link i {
+    color: #fff;
+  }
+  
+  /* Cambiar el color del ícono en los enlaces del menú de navegación al pasar el mouse */
+  .navbar-nav .nav-link:hover i {
+    color: #ffcc00;
+  }
+  
+  /* Cambiar el color del pie de página */
+  footer {
+    background-color: #222;
+    color: #fff;
+  }
+  

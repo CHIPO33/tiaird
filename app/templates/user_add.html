@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="background-color: rgba(241, 235, 242, 0.7);">
+    <div class="card-body">
+      <h2 class="card-title"><i class="fas fa-user-plus"></i> Agregar Usuario</h2>
+      <form method="POST" style="max-width: 400px;">
+        <div class="mb-3">
+          <label for="nombre" class="form-label"><i class="fas fa-user"></i> Nombre:</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" required>
+        </div>
+       <div class="mb-3">
+          <label for="correo" class="form-label"><i class="fas fa-envelope"></i> Correo:</label>
+          <input type="email" name="correo" id="correo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="contraseña" class="form-label"><i class="fas fa-lock"></i> Contraseña:</label>
+          <input type="password" name="contraseña" id="contraseña" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="tipo_usuario" class="form-label"><i class="fas fa-lock"></i> tipo_usuario:</label>
+            <input type="tipo_usuario" name="tipo_usuario" id="contraseña" class="form-control" required>
+          </div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

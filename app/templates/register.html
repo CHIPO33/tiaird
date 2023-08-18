@@ -1,0 +1,46 @@
+{% extends 'baseregister.html' %}
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="background-color: rgba(241, 235, 242, 0.7);">
+    <div class="card-body">
+      <h2 class="card-title"><i class="fas fa-user-plus"></i> Registrar Usuario</h2>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                {% set icon, color = get_flash_message_style(category) %}
+                <div class="alert alert-{{ color }}">
+                  <i class="{{ icon }}"></i> {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+      <form method="POST">
+        <div class="mb-3">
+          <label for="nombre" class="form-label"><i class="fas fa-user"></i> Nombre:</label>
+          <input type="text" name="nombre" id="nombre" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="correo" class="form-label"><i class="fas fa-user"></i> Correo:</label>
+          <input type="email" name="correo" id="correo" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="contraseña" class="form-label"><i class="fas fa-lock"></i> Contraseña:</label>
+          <input type="password" name="contraseña" id="contraseña" class="form-control" required>
+        </div>
+        <!-- Elimina el campo de tipo_usuario del formulario, ya que será establecido automáticamente -->
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary"><i class="fas fa-user-plus"></i> Registrar</button>
+          <a href="javascript:history.back()" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Retroceder
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

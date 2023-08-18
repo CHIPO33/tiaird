@@ -1,0 +1,45 @@
+{% extends 'base_admin.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="background-color: rgba(241, 235, 242, 0.7);">
+    <div class="card-body">
+      <h1><i class="fas fa-image"></i> <i class="fas fa-user"></i> Vacantes disponibles</h1>
+      <a href="{{url_for("registrar_vacantes")}}" class="btn btn-primary"><i class="fas fa-plus"></i> Registrar nueva vacante</a>
+      <a href="{{url_for("user")}}" class="btn btn-primary float-end"><i class="fas fa-users"></i> Ver Usuarios Registrados</a>
+      {% if mensaje %}
+        <div class="alert alert-info mt-3">
+          <i class="fas fa-info-circle"></i> {{ mensaje }}
+        </div>
+      {% else %}
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th><i class="fas fa-school"></i> Carrera</th>
+              <th><i class="fas fa-building"></i> Puesto</th>
+              <th><i class="fas fa-calendar-day"></i> Fecha Publicación</th>
+              <th><i class="fas fa-file-image"></i> Imagen de Vacante</th>
+              <th><i class="fas fa-cogs"></i> Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for vacante in vacantes %}
+            <tr>
+              <td>{{ vacante.1 }}</td>
+              <td>{{ vacante.2 }}</td>
+              <td>{{ vacante.3 }}</td>
+              <td><img src="{{url_for('static', filename='img/uploads/vacantes/') + vacante.4}}"style="max-width: 180px; max-height: 100px;"></td>
+              <td>
+              </tr>
+          
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+      <a href="javascript:history.back()" class="btn btn-primary mt-3">
+        <i class="fas fa-arrow-left"></i> Retroceder
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

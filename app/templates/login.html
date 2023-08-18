@@ -1,0 +1,41 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="card" style="background-color: rgba(241, 235, 242, 0.7);">
+    <div class="card-body">
+      <h2 class="mb-4"><i class="fas fa-user"></i> Iniciar sesión</h2> 
+      <form method="POST" style="max-width: 400px;">
+        <div class="mb-3">
+          <label for="correo" class="form-label">Correo:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <input type="email" name="correo" id="correo" class="form-control" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="contraseña" class="form-label">Contraseña:</label>
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+            <input type="password" name="contraseña" id="contraseña" class="form-control" required>
+          </div>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                {% set icon, color = get_flash_message_style(category) %}
+                <div class="alert alert-{{ color }}">
+                  <i class="{{ icon }}"></i> {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
+        <a href="/register" class="btn btn-info"><i class="fas fa-print"></i>Registrate aqui</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
